@@ -1,205 +1,95 @@
-# Meadow OS 🌿
+# 🌿 Meadow OS
 
-A static personal downloads hub for GitHub Pages, styled to look and feel like a classic early-2000s desktop operating system.
+A personal downloads hub for my projects, built to look and feel like a classic early-2000s desktop operating system — running entirely in your browser, hosted for free on GitHub Pages.
 
-Built with plain HTML, CSS, and vanilla JavaScript (ES modules). No build step, no frameworks, no dependencies.
+Browse and download my releases through a retro desktop UI complete with draggable windows, a taskbar, a built-in terminal, Snake, and more.
 
 ---
 
-## Live Demo
+## 🖥 Visit the Site
 
-Once deployed, your site is at:
+**[damiensmith420.github.io/meadow-os](https://damiensmith420.github.io/meadow-os)**
+
+No installation. Just open it in any browser.
+
+---
+
+## What's Available
+
+| Project | Description |
+|---------|-------------|
+| **SaveVault** | Back up your game saves to your own Google Drive |
+
+More projects coming soon.
+
+---
+
+## How to Use
+
+**On desktop:**
+- Double-click the **Downloads** folder icon to browse all projects
+- Open a project folder to see its releases
+- Click any release asset to download it directly from GitHub
+- Right-click files or folders for a **Properties** dialog with size, date, and download counts
+- Try the **Terminal** — type `help` for available commands
+- Hit the green **Meadow** button in the bottom-left for the app menu
+- Change the colour theme via **Display Properties** (right-click the desktop or use the menu)
+
+**On mobile:**
+- The site switches automatically to a clean expandable list layout
+
+---
+
+## About This Site
+
+Meadow OS is a fully static site — plain HTML, CSS, and vanilla JavaScript with no frameworks and no build step. It runs entirely in your browser and is hosted for free on GitHub Pages.
+
+Release data is kept fresh by a GitHub Actions workflow that runs every 6 hours and caches the latest release info from the GitHub API.
+
+---
+
+## Want to Run a Copy Yourself?
+
+Meadow OS is open source. Fork the repo, swap out the project list, and have your own retro downloads hub live in minutes.
+
+### Quick setup
+
+1. **Fork** this repository on GitHub
+2. Go to **Settings → Pages** → Source: **Deploy from branch** → `main` / `/ (root)` → Save
+3. Edit `data/repos.json` to list your own GitHub repos (see format below)
+4. Go to **Actions → Update Releases Cache → Run workflow** to pull in release data
+5. Your site is live at `https://<your-username>.github.io/<repo-name>/`
+
+### Adding a project to the downloads list
+
+Open `data/repos.json` and add an entry:
+
+```json
+{
+  "repo": "your-username/your-repo",
+  "label": "Display Name",
+  "description": "One line description shown in the UI.",
+  "icon": "folder-code"
+}
 ```
-https://damiensmith420.github.io/<repo-name>/
-```
 
----
+Push the change — the workflow triggers automatically and your project appears in the Downloads window.
 
-## Quick Start
+### Editing the About Me page
 
-### 1. Create the repository
+Open `data/about.md` and write whatever you like. It renders as Markdown in the in-app Notepad window.
 
-1. Log into GitHub as **damiensmith420**.
-2. Create a new **public** repository (e.g. `meadow-os`).
-3. Copy all files from this project into the repository root.
-4. Push to `main`.
+### Running locally
 
-### 2. Enable GitHub Pages
-
-1. Go to **Settings → Pages**.
-2. Under **Source**, select **Deploy from a branch**.
-3. Branch: `main`, folder: `/ (root)`.
-4. Click **Save**.
-
-Your site will be live at `https://damiensmith420.github.io/meadow-os/` within a minute or two.
-
-> The `.nojekyll` file at the root prevents GitHub Pages from processing the site with Jekyll,
-> which would interfere with ES module paths.
-
-### 3. Seed the releases cache
-
-After the first push, trigger the release data workflow manually:
-
-1. Go to **Actions → Update Releases Cache**.
-2. Click **Run workflow → Run workflow**.
-
-This writes `data/releases.json` and commits it. From then on it runs automatically every 6 hours and whenever you edit `data/repos.json`.
-
----
-
-## Running Locally
-
-Because `fetch()` of a local JSON file fails on the `file://` protocol, use a simple HTTP server:
+`fetch()` can't load local JSON files over `file://`, so use a simple server:
 
 ```bash
-# Python 3 (recommended)
-cd meadow-os
 python -m http.server 8000
 # then open http://localhost:8000
 ```
 
-Or with Node.js (if you have `npx`):
-```bash
-npx serve .
-```
-
 ---
 
-## Editing the Repo List
+## License
 
-Open `data/repos.json`. Each entry is:
-
-```json
-{
-  "repo": "owner/name",
-  "label": "Display Name",
-  "description": "One-line description shown in the folder view.",
-  "icon": "folder"
-}
-```
-
-| Field         | Required | Notes                                              |
-|---------------|----------|----------------------------------------------------|
-| `repo`        | ✓        | GitHub slug (`owner/name`). Public repos only.     |
-| `label`       | ✓        | Shown as the folder name in the UI.                |
-| `description` | —        | Optional. Shown in details view and Properties.    |
-| `icon`        | —        | Icon name: `folder`, `folder-code`, `downloads`.   |
-
-### Adding a new repo
-
-1. Add an entry to `data/repos.json`.
-2. Push to `main`.
-3. The GitHub Actions workflow triggers automatically (or run it manually).
-
-### Removing a repo
-
-Delete its entry from `data/repos.json` and push.
-
----
-
-## Editing About Me
-
-Edit `data/about.md` — it's standard Markdown. The "About Me" desktop icon opens it in a Notepad-style window.
-
----
-
-## Themes
-
-Three built-in themes (no code changes needed — use the UI):
-
-| Theme   | Description                            |
-|---------|----------------------------------------|
-| Meadow  | Blue title bars, green taskbar, sky wallpaper (default) |
-| Midnight| Dark blue/black colour scheme          |
-| Silver  | Neutral grey, suitable for dark rooms  |
-
-To switch: right-click the desktop → **Display Properties**, or open the Meadow menu → **Display Props**, or type `theme dark` in the Terminal.
-
-Theme choice is saved in `localStorage`.
-
----
-
-## File Structure
-
-```
-meadow-os/
-├── index.html                  Main page
-├── .nojekyll                   Disables Jekyll on GitHub Pages
-├── README.md
-│
-├── data/
-│   ├── repos.json              ← Edit this to add/remove repos
-│   ├── config.json             GitHub username and settings
-│   ├── about.md                Your About Me text (Markdown)
-│   └── releases.json           Auto-generated by GitHub Actions
-│
-├── css/
-│   ├── base.css                Resets and CSS variables
-│   ├── desktop.css             Wallpaper, desktop icons, boot/login screens
-│   ├── window.css              Draggable windows, folder view, notepad, terminal
-│   ├── taskbar.css             Bottom taskbar and Meadow button
-│   ├── menu.css                Meadow popup menu
-│   ├── dialogs.css             Modals, Properties, Display Properties, asset picker
-│   ├── themes.css              Dark and Silver theme overrides
-│   └── mobile.css              Simplified layout for screens < 700 px
-│
-├── js/
-│   ├── main.js                 Entry point — orchestrates everything
-│   ├── boot.js                 Boot animation and first-visit logic
-│   ├── desktop.js              Desktop icons, keyboard nav, right-click menu
-│   ├── windows.js              Window manager (drag, resize, focus, z-order)
-│   ├── taskbar.js              Taskbar buttons and system clock
-│   ├── menu.js                 Meadow menu popup and shutdown sequence
-│   ├── theme.js                Theme application and persistence
-│   ├── dialog.js               Error / info / confirm / Properties dialogs
-│   ├── icons.js                Inline SVG icon library
-│   ├── downloads.js            Downloads folder browser (multi-level)
-│   ├── github.js               GitHub API fetching and session caching
-│   ├── notepad.js              Markdown viewer (About Me, release notes)
-│   ├── terminal.js             Fake terminal emulator
-│   ├── recycle.js              Recycle Bin (+ easter egg)
-│   ├── game.js                 Snake game
-│   ├── gadget.js               Recent Activity desktop widget
-│   └── mobile.js               Mobile/narrow-screen list layout
-│
-├── assets/
-│   └── icons.svg               SVG icon sprite reference (for documentation)
-│
-└── .github/
-    └── workflows/
-        └── update-releases.yml  Scheduled releases cache updater
-```
-
----
-
-## GitHub Actions Workflow
-
-The workflow at `.github/workflows/update-releases.yml`:
-
-- **Triggers:** every 6 hours · manual dispatch · push to `data/repos.json`
-- **What it does:** reads `repos.json`, calls the GitHub REST API (using the built-in `GITHUB_TOKEN`) for each repo's releases, writes the combined result to `data/releases.json`, and commits it if changed.
-- **No secrets required** — `GITHUB_TOKEN` is provided automatically.
-
-### Rate limits
-
-The workflow uses the built-in `GITHUB_TOKEN` which has a much higher rate limit than unauthenticated requests. The front end falls back to live API calls (unauthenticated, 60 req/hr) if `releases.json` is empty, with session-storage caching to conserve quota.
-
----
-
-## Keyboard Shortcuts
-
-| Key          | Action                             |
-|--------------|------------------------------------|
-| Enter        | Open selected icon / button        |
-| Escape       | Close dialog or Meadow menu        |
-| Arrow keys   | Navigate desktop icons / Snake game|
-| Tab          | Move focus between elements        |
-
----
-
-## Notes & Limitations
-
-- **Public repos only.** Never add GitHub tokens to front-end code.
-- **No build step.** Works as-is; just serve the files.
-- **Mobile:** screens narrower than 700 px show a simplified list layout instead of windows.
-- **file:// protocol:** `fetch()` won't load JSON files from `file://`. Use `python -m http.server`.
+MIT — fork it, reskin it, make it your own.
