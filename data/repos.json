@@ -6,9 +6,9 @@
     "icon": "folder-code"
   },
   {
-    "repo": "damiensmith420/sample-project",
-    "label": "Sample Project",
-    "description": "A placeholder project — replace with your real repos.",
-    "icon": "folder"
+    "repo": "damiensmith420/savevault",
+    "label": "SaveVault",
+    "description": "Back up your game saves to your own Google Drive.",
+    "icon": "folder-code"
   }
 ]
