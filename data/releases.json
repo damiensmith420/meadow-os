@@ -1,4 +1,84 @@
 {
   "damiensmith420/meadow-os": [],
-  "damiensmith420/sample-project": []
+  "damiensmith420/savevault": [
+    {
+      "url": "https://api.github.com/repos/damiensmith420/savevault/releases/424853349",
+      "assets_url": "https://api.github.com/repos/damiensmith420/savevault/releases/424853349/assets",
+      "upload_url": "https://uploads.github.com/repos/damiensmith420/savevault/releases/424853349/assets{?name,label}",
+      "html_url": "https://github.com/damiensmith420/savevault/releases/tag/v1.0.0",
+      "id": 424853349,
+      "author": {
+        "login": "damiensmith420",
+        "id": 14878337,
+        "node_id": "MDQ6VXNlcjE0ODc4MzM3",
+        "avatar_url": "https://avatars.githubusercontent.com/u/14878337?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/damiensmith420",
+        "html_url": "https://github.com/damiensmith420",
+        "followers_url": "https://api.github.com/users/damiensmith420/followers",
+        "following_url": "https://api.github.com/users/damiensmith420/following{/other_user}",
+        "gists_url": "https://api.github.com/users/damiensmith420/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/damiensmith420/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/damiensmith420/subscriptions",
+        "organizations_url": "https://api.github.com/users/damiensmith420/orgs",
+        "repos_url": "https://api.github.com/users/damiensmith420/repos",
+        "events_url": "https://api.github.com/users/damiensmith420/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/damiensmith420/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "node_id": "RE_kwDOVYg-OM4ZUr9l",
+      "tag_name": "v1.0.0",
+      "target_commitish": "main",
+      "name": "SaveVault v1.0.0 \u2014 Initial Release",
+      "draft": false,
+      "immutable": false,
+      "prerelease": false,
+      "created_at": "2026-10-26T22:45:07Z",
+      "updated_at": "2026-10-26T22:50:28Z",
+      "published_at": "2026-10-26T22:50:28Z",
+      "assets": [
+        {
+          "url": "https://api.github.com/repos/damiensmith420/savevault/releases/assets/679731098",
+          "id": 679731098,
+          "node_id": "RA_kwDOVYg-OM4og9-a",
+          "name": "SaveVault.exe",
+          "label": null,
+          "uploader": {
+            "login": "damiensmith420",
+            "id": 14878337,
+            "node_id": "MDQ6VXNlcjE0ODc4MzM3",
+            "avatar_url": "https://avatars.githubusercontent.com/u/14878337?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/damiensmith420",
+            "html_url": "https://github.com/damiensmith420",
+            "followers_url": "https://api.github.com/users/damiensmith420/followers",
+            "following_url": "https://api.github.com/users/damiensmith420/following{/other_user}",
+            "gists_url": "https://api.github.com/users/damiensmith420/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/damiensmith420/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/damiensmith420/subscriptions",
+            "organizations_url": "https://api.github.com/users/damiensmith420/orgs",
+            "repos_url": "https://api.github.com/users/damiensmith420/repos",
+            "events_url": "https://api.github.com/users/damiensmith420/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/damiensmith420/received_events",
+            "type": "User",
+            "user_view_type": "public",
+            "site_admin": false
+          },
+          "content_type": "application/x-msdownload",
+          "state": "uploaded",
+          "size": 42742950,
+          "digest": "sha256:1dfbf995558a83f5b40b64fb20ee7033616c91fbb0789a8347d024302c78df7c",
+          "download_count": 0,
+          "created_at": "2026-10-26T22:50:17Z",
+          "updated_at": "2026-10-26T22:50:22Z",
+          "browser_download_url": "https://github.com/damiensmith420/savevault/releases/download/v1.0.0/SaveVault.exe"
+        }
+      ],
+      "tarball_url": "https://api.github.com/repos/damiensmith420/savevault/tarball/v1.0.0",
+      "zipball_url": "https://api.github.com/repos/damiensmith420/savevault/zipball/v1.0.0",
+      "body": "## SaveVault v1.0.0\r\n\r\nBack up your game saves to your own Google Drive. Never lose a save again.\r\n\r\n### What's included\r\n- Sign in with Google \u2014 your saves go directly to your own Drive, nothing else\r\n- Add any number of games with custom names and local save paths\r\n- Full recursive sync \u2014 backs up all files and subfolders inside your save directory\r\n- Conflict resolution \u2014 if both sides changed, you choose which version wins\r\n- Restore on a new PC \u2014 sign in and sync back down automatically\r\n- Modern dark-themed UI, no installation required\r\n\r\n### How to use\r\n1. Download `SaveVault.exe` below\r\n2. Run it \u2014 no installation needed\r\n3. Sign in with your Google account\r\n4. Click **+ Add Game**, name it, and point it at your save folder\r\n5. Click **Sync**\r\n\r\n> If Google shows an \"unverified app\" warning, click **Advanced \u2192 Go to SaveVault (unsafe)**.\r\n> This is normal for apps that haven't gone through Google's review process yet \u2014 it is safe.\r\n\r\n### Want to build it yourself?\r\nDownload the source code and read `INSTRUCTIONS.txt` for a step-by-step guide to\r\nbuilding SaveVault with your own Google Cloud credentials.\r\n\r\n### Requirements\r\n- Windows 10 or 11 (64-bit)\r\n- A Google account"
+    }
+  ]
 }
