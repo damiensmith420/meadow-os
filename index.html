@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meadow OS — damiensmith420</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/desktop.css" />
+  <link rel="stylesheet" href="css/window.css" />
+  <link rel="stylesheet" href="css/taskbar.css" />
+  <link rel="stylesheet" href="css/menu.css" />
+  <link rel="stylesheet" href="css/dialogs.css" />
+  <link rel="stylesheet" href="css/themes.css" />
+  <link rel="stylesheet" href="css/mobile.css" />
+</head>
+<body class="theme-meadow" tabindex="-1">
+
+  <!-- Boot / welcome screen -->
+  <div id="boot-screen" class="boot-screen" aria-live="polite">
+    <div class="boot-logo">
+      <svg width="120" height="120" viewBox="0 0 120 120" aria-hidden="true">
+        <!-- Meadow OS flower logo -->
+        <circle cx="60" cy="60" r="58" fill="#2a7a2a" stroke="#1a5a1a" stroke-width="2"/>
+        <ellipse cx="60" cy="38" rx="10" ry="16" fill="#90e040" transform="rotate(0 60 60)"/>
+        <ellipse cx="60" cy="38" rx="10" ry="16" fill="#90e040" transform="rotate(60 60 60)"/>
+        <ellipse cx="60" cy="38" rx="10" ry="16" fill="#90e040" transform="rotate(120 60 60)"/>
+        <ellipse cx="60" cy="38" rx="10" ry="16" fill="#90e040" transform="rotate(180 60 60)"/>
+        <ellipse cx="60" cy="38" rx="10" ry="16" fill="#90e040" transform="rotate(240 60 60)"/>
+        <ellipse cx="60" cy="38" rx="10" ry="16" fill="#90e040" transform="rotate(300 60 60)"/>
+        <circle cx="60" cy="60" r="14" fill="#ffe040"/>
+      </svg>
+      <h1>Meadow OS</h1>
+      <p class="boot-tagline">Personal Downloads Hub</p>
+    </div>
+    <div class="boot-loading">
+      <div class="boot-bar-track"><div class="boot-bar-fill" id="boot-bar"></div></div>
+      <p id="boot-status">Loading…</p>
+    </div>
+    <button class="boot-skip" id="boot-skip" aria-label="Skip boot screen">Skip</button>
+  </div>
+
+  <!-- Login screen (shown after shut down) -->
+  <div id="login-screen" class="login-screen hidden" aria-label="Login screen">
+    <div class="login-box">
+      <svg width="64" height="64" viewBox="0 0 64 64" aria-hidden="true">
+        <circle cx="32" cy="20" r="14" fill="#5599ee"/>
+        <path d="M8 58 Q8 40 32 40 Q56 40 56 58" fill="#5599ee"/>
+      </svg>
+      <p class="login-name">damiensmith420</p>
+      <button class="login-btn" id="login-btn" aria-label="Log back in">Log In</button>
+    </div>
+  </div>
+
+  <!-- Main desktop -->
+  <div id="desktop" class="desktop hidden" role="main" aria-label="Meadow OS Desktop">
+    <!-- Wallpaper is drawn by CSS + SVG background -->
+    <div id="desktop-icons" class="desktop-icons" role="list" aria-label="Desktop icons"></div>
+    <!-- Recent Activity gadget -->
+    <aside id="recent-gadget" class="recent-gadget" aria-label="Recent Activity"></aside>
+    <!-- Window container -->
+    <div id="window-layer" class="window-layer" aria-live="polite"></div>
+    <!-- Context menu -->
+    <nav id="ctx-menu" class="ctx-menu hidden" role="menu" aria-label="Context menu"></nav>
+  </div>
+
+  <!-- Taskbar -->
+  <footer id="taskbar" class="taskbar hidden" role="navigation" aria-label="Taskbar">
+    <button class="meadow-btn" id="meadow-btn" aria-haspopup="true" aria-expanded="false" aria-label="Open Meadow menu">
+      <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">
+        <circle cx="9" cy="9" r="8" fill="#3aaa3a"/>
+        <circle cx="9" cy="7" r="3" fill="#ffe040"/>
+        <ellipse cx="9" cy="13" rx="5" ry="3" fill="#90e040"/>
+      </svg>
+      <span>Meadow</span>
+    </button>
+    <div id="taskbar-apps" class="taskbar-apps" role="list" aria-label="Open windows"></div>
+    <div class="taskbar-tray" role="complementary" aria-label="System tray">
+      <div id="tray-clock" class="tray-clock" aria-live="off" tabindex="0" title=""></div>
+    </div>
+  </footer>
+
+  <!-- Meadow Menu popup -->
+  <nav id="meadow-menu" class="meadow-menu hidden" role="menu" aria-label="Meadow menu"></nav>
+
+  <!-- Mobile layout -->
+  <div id="mobile-layout" class="mobile-layout hidden" role="main" aria-label="Mobile Downloads">
+    <header class="mobile-header">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="12" cy="12" r="11" fill="#2a7a2a"/>
+        <circle cx="12" cy="12" r="4" fill="#ffe040"/>
+      </svg>
+      <span>Meadow OS — Downloads</span>
+    </header>
+    <div id="mobile-content" class="mobile-content"></div>
+  </div>
+
+  <!-- App entry point -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

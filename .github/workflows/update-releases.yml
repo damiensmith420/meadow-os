@@ -1,0 +1,90 @@
+name: Update Releases Cache
+
+# Runs on a schedule, on manual dispatch, or when repos.json is changed.
+on:
+  schedule:
+    # Every 6 hours
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+  push:
+    paths:
+      - 'data/repos.json'
+
+permissions:
+  contents: write
+
+jobs:
+  update-releases:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Fetch releases for each repo
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Read the repos manifest and fetch releases for each entry.
+          # Writes data/releases.json as an object keyed by "owner/repo".
+          
+          python3 - <<'PYEOF'
+          import json, urllib.request, os, sys
+
+          TOKEN  = os.environ.get("GH_TOKEN", "")
+          REPOS_FILE    = "data/repos.json"
+          RELEASES_FILE = "data/releases.json"
+
+          with open(REPOS_FILE) as f:
+              repos = json.load(f)
+
+          result = {}
+          errors = []
+
+          for entry in repos:
+              slug = entry.get("repo", "")
+              if not slug:
+                  continue
+              url = f"https://api.github.com/repos/{slug}/releases?per_page=30"
+              req = urllib.request.Request(url)
+              req.add_header("Accept", "application/vnd.github+json")
+              req.add_header("User-Agent", "meadow-os-updater/1.0")
+              if TOKEN:
+                  req.add_header("Authorization", f"Bearer {TOKEN}")
+              try:
+                  with urllib.request.urlopen(req, timeout=20) as resp:
+                      releases = json.loads(resp.read())
+                      result[slug] = releases
+                      print(f"  OK  {slug}: {len(releases)} release(s)")
+              except urllib.error.HTTPError as e:
+                  msg = f"  ERR {slug}: HTTP {e.code} {e.reason}"
+                  print(msg, file=sys.stderr)
+                  errors.append(msg)
+                  result[slug] = []
+              except Exception as e:
+                  msg = f"  ERR {slug}: {e}"
+                  print(msg, file=sys.stderr)
+                  errors.append(msg)
+                  result[slug] = []
+
+          with open(RELEASES_FILE, "w") as f:
+              json.dump(result, f, indent=2)
+
+          print(f"\nWrote {RELEASES_FILE} with {len(result)} repo(s).")
+          if errors:
+              print("\nErrors encountered (non-fatal):")
+              for e in errors:
+                  print(e)
+          PYEOF
+
+      - name: Commit updated releases.json (if changed)
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/releases.json
+          # Only commit if there are staged changes
+          if git diff --cached --quiet; then
+            echo "No changes to releases.json — skipping commit."
+          else
+            git commit -m "chore: update releases cache [skip ci]"
+            git push
+          fi

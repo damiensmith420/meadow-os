@@ -1,0 +1,103 @@
+/* =============================================
+   menu.css — Meadow popup menu
+   ============================================= */
+
+.meadow-menu {
+  position: fixed;
+  bottom: 36px;
+  left: 0;
+  width: 280px;
+  background: var(--color-menu-bg);
+  border: 1px solid #7a96c4;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 4px -4px 16px rgba(0,0,0,0.35);
+  z-index: 6000;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.meadow-menu-header {
+  background: linear-gradient(135deg, #1a6ecf 0%, #3aaa3a 100%);
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+}
+.meadow-menu-header svg { width: 36px; height: 36px; flex-shrink: 0; }
+.meadow-menu-user { font-size: 12px; opacity: 0.85; font-weight: normal; }
+
+.meadow-menu-body {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.meadow-menu-left {
+  flex: 1;
+  padding: 6px 0;
+  border-right: 1px solid #c8c4b8;
+}
+.meadow-menu-right {
+  width: 100px;
+  padding: 6px 0;
+  background: #e8e4dc;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #1a1a2a;
+  white-space: nowrap;
+}
+.menu-item:hover, .menu-item:focus {
+  background: var(--color-menu-hover);
+  color: var(--color-menu-hover-text);
+  outline: none;
+}
+.menu-item svg { width: 20px; height: 20px; flex-shrink: 0; }
+.menu-item .mi-label { flex: 1; }
+.menu-item .mi-sub { font-size: 10px; opacity: 0.7; display: block; }
+
+.menu-separator {
+  height: 1px;
+  background: #c8c4b8;
+  margin: 4px 10px;
+}
+
+.meadow-menu-footer {
+  border-top: 1px solid #c8c4b8;
+  padding: 6px 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  background: #ddd9d0;
+}
+.menu-footer-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  background: linear-gradient(180deg, #f4f2ec 0%, #d4d0c8 100%);
+  border: 1px solid #9a9890;
+  border-radius: 3px;
+  font-size: 11px;
+  color: #1a1a1a;
+  cursor: pointer;
+}
+.menu-footer-btn:hover { background: linear-gradient(180deg, #fff 0%, #e4e0d8 100%); }
+.menu-footer-btn.shutdown {
+  background: linear-gradient(180deg, #f06030 0%, #c03010 100%);
+  color: #fff;
+  border-color: #802010;
+}
+.menu-footer-btn.shutdown:hover {
+  background: linear-gradient(180deg, #f87040 0%, #d04020 100%);
+}

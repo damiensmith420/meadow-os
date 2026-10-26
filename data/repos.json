@@ -1,0 +1,14 @@
+[
+  {
+    "repo": "damiensmith420/meadow-os",
+    "label": "Meadow OS",
+    "description": "A classic desktop-style personal downloads hub for GitHub Pages.",
+    "icon": "folder-code"
+  },
+  {
+    "repo": "damiensmith420/sample-project",
+    "label": "Sample Project",
+    "description": "A placeholder project — replace with your real repos.",
+    "icon": "folder"
+  }
+]

@@ -1,0 +1,228 @@
+/* =============================================
+   desktop.css — Wallpaper, desktop icons, gadget
+   ============================================= */
+
+.boot-screen {
+  position: fixed; inset: 0;
+  background: #000814;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  z-index: 9999;
+  color: #e8e8e8;
+  transition: opacity 0.6s ease;
+}
+.boot-screen.fading { opacity: 0; pointer-events: none; }
+.boot-logo { text-align: center; }
+.boot-logo h1 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-top: 12px;
+  color: #a0e060;
+  letter-spacing: 2px;
+}
+.boot-tagline { color: #8ab0c0; font-size: 0.95rem; margin-top: 4px; }
+.boot-loading { text-align: center; }
+.boot-bar-track {
+  width: 260px; height: 16px;
+  background: #1a2a1a;
+  border: 1px solid #3a6a3a;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 auto 8px;
+}
+.boot-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #3aaa3a, #a0e040);
+  border-radius: 8px;
+  transition: width 0.3s ease;
+}
+#boot-status { font-size: 11px; color: #80a080; }
+.boot-skip {
+  position: absolute; bottom: 24px; right: 24px;
+  color: #607060; font-size: 11px;
+  background: none; border: 1px solid #304030;
+  padding: 4px 12px; border-radius: 3px;
+  cursor: pointer;
+}
+.boot-skip:hover { color: #a0e060; border-color: #507050; }
+
+/* Login screen */
+.login-screen {
+  position: fixed; inset: 0;
+  background: linear-gradient(180deg, #1a4a8a 0%, #0a1a3a 100%);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9998;
+}
+.login-box {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  padding: 40px 48px;
+  text-align: center;
+  color: #fff;
+}
+.login-name { font-size: 1.1rem; margin: 12px 0 20px; font-weight: bold; }
+.login-btn {
+  background: linear-gradient(180deg, #4a90d0 0%, #1a5aa8 100%);
+  color: #fff;
+  border: 1px solid #0a3a78;
+  border-radius: 4px;
+  padding: 8px 32px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.login-btn:hover { background: linear-gradient(180deg, #5aa0e0 0%, #2a6ab8 100%); }
+
+/* Desktop */
+.desktop {
+  position: fixed; inset: 0 0 36px 0;
+  overflow: hidden;
+  /* Wallpaper: original CSS/SVG rolling hills scene */
+  background:
+    /* Clouds */
+    radial-gradient(ellipse 80px 30px at 15% 18%, rgba(255,255,255,0.85) 0%, transparent 70%),
+    radial-gradient(ellipse 60px 22px at 22% 14%, rgba(255,255,255,0.75) 0%, transparent 70%),
+    radial-gradient(ellipse 100px 35px at 55% 12%, rgba(255,255,255,0.80) 0%, transparent 70%),
+    radial-gradient(ellipse 70px 26px at 62% 8%,  rgba(255,255,255,0.70) 0%, transparent 70%),
+    radial-gradient(ellipse 90px 32px at 82% 16%, rgba(255,255,255,0.78) 0%, transparent 70%),
+    /* Rolling hills */
+    radial-gradient(ellipse 110% 60% at 30% 120%, #2bb83a 0%, transparent 55%),
+    radial-gradient(ellipse 110% 60% at 75% 115%, #32c842 0%, transparent 50%),
+    /* Sky */
+    linear-gradient(180deg, #3d9fe8 0%, #88ccf8 60%, #b8e4fa 100%);
+  background-attachment: local;
+}
+
+/* Desktop icons */
+.desktop-icons {
+  position: absolute;
+  top: 12px; left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 72px;
+  padding: 6px 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--color-desktop-text);
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.7);
+  border: 2px solid transparent;
+  transition: background 0.1s;
+}
+.desktop-icon:focus,
+.desktop-icon.selected {
+  background: rgba(60, 100, 200, 0.45);
+  border-color: rgba(120,160,255,0.6);
+  outline: none;
+}
+.desktop-icon:hover { background: rgba(60, 100, 200, 0.25); }
+.desktop-icon svg, .desktop-icon img {
+  width: 40px; height: 40px;
+  pointer-events: none;
+}
+.desktop-icon span {
+  font-size: 11px;
+  margin-top: 3px;
+  line-height: 1.2;
+  word-break: break-word;
+  max-width: 68px;
+  pointer-events: none;
+}
+
+/* Recent Activity Gadget */
+.recent-gadget {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 220px;
+  max-height: 340px;
+  background: rgba(255,255,255,0.82);
+  border: 1px solid rgba(120,160,255,0.5);
+  border-radius: 6px;
+  backdrop-filter: blur(3px);
+  padding: 8px;
+  font-size: 11px;
+  overflow-y: auto;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.gadget-title {
+  font-weight: bold;
+  font-size: 11px;
+  color: #1a4a8a;
+  border-bottom: 1px solid #c8d8f0;
+  padding-bottom: 4px;
+  margin-bottom: 6px;
+  display: flex; align-items: center; gap: 4px;
+}
+.gadget-item {
+  padding: 3px 2px;
+  border-bottom: 1px solid #e8eef8;
+  color: #2a3a5a;
+  line-height: 1.35;
+}
+.gadget-item .gi-repo { font-weight: bold; color: #1a50a0; }
+.gadget-item .gi-msg { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gadget-item .gi-time { color: #8090a8; font-size: 10px; }
+
+/* Shut-down overlay */
+.shutdown-overlay {
+  position: fixed; inset: 0;
+  background: #000;
+  opacity: 0;
+  z-index: 99999;
+  transition: opacity 1.2s ease;
+  pointer-events: none;
+}
+.shutdown-overlay.active { opacity: 1; pointer-events: all; }
+
+/* Context menu */
+.ctx-menu {
+  position: fixed;
+  background: var(--color-menu-bg);
+  border: 1px solid #7a96c4;
+  border-radius: 4px;
+  box-shadow: 2px 4px 12px rgba(0,0,0,0.3);
+  z-index: 8000;
+  min-width: 160px;
+  padding: 3px 0;
+}
+.ctx-menu-item {
+  padding: 5px 20px 5px 12px;
+  cursor: pointer;
+  font-size: 12px;
+  color: #1a1a2a;
+  white-space: nowrap;
+}
+.ctx-menu-item:hover, .ctx-menu-item:focus {
+  background: var(--color-menu-hover);
+  color: var(--color-menu-hover-text);
+  outline: none;
+}
+.ctx-menu-separator {
+  height: 1px;
+  background: #c8c4b8;
+  margin: 3px 8px;
+}
+
+/* Window layer */
+.window-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.window-layer > * {
+  pointer-events: all;
+}

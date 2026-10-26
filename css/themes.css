@@ -1,0 +1,100 @@
+/* =============================================
+   themes.css — Theme overrides: dark, silver
+   ============================================= */
+
+/* Default (Meadow) is defined in base.css :root */
+
+/* ── Dark theme ── */
+.theme-dark {
+  --color-titlebar-top:    #2a2a3a;
+  --color-titlebar-bot:    #0a0a18;
+  --color-titlebar-text:   #c8d0ff;
+  --color-taskbar-bg:      #111118;
+  --color-meadow-btn:      #2a6a2a;
+  --color-window-body:     #1e1e2a;
+  --color-window-border:   #3a3a5a;
+  --color-window-inset:    #141420;
+  --color-desktop-text:    #e0e8ff;
+  --color-menu-bg:         #1e1e2a;
+  --color-menu-hover:      #3a5aaa;
+  --color-menu-hover-text: #ffffff;
+  --color-input-bg:        #141420;
+  --color-input-border:    #3a4a7a;
+  --color-scrollbar-thumb: #3a4a7a;
+  --wallpaper-sky:         #0a1a2a;
+  --wallpaper-grass:       #0a2a0a;
+  --shadow-window: 2px 4px 24px rgba(0,0,0,0.7);
+}
+.theme-dark .desktop {
+  background:
+    radial-gradient(ellipse 80px 20px at 15% 18%, rgba(200,220,255,0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 100px 25px at 55% 12%, rgba(200,220,255,0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 110% 50% at 30% 130%, #0a2a0a 0%, transparent 55%),
+    radial-gradient(ellipse 110% 50% at 75% 125%, #0a2a0a 0%, transparent 50%),
+    linear-gradient(180deg, #040810 0%, #0a1a30 60%, #061010 100%);
+}
+.theme-dark .win-body    { background: var(--color-window-body); color: #c0c8e0; }
+.theme-dark .folder-view { background: #141420; color: #c0c8e0; }
+.theme-dark .notepad-body { background: #0c0c18; color: #c8d0e8; }
+.theme-dark .win-toolbar  { background: #1e1e2a; border-color: #3a3a5a; }
+.theme-dark .win-menubar  { background: #1e1e2a; border-color: #3a3a5a; }
+.theme-dark .win-addressbar { background: #1e1e2a; border-color: #3a3a5a; }
+.theme-dark .win-statusbar { background: #141420; border-color: #3a3a5a; color: #8090a8; }
+.theme-dark .taskbar {
+  background: linear-gradient(180deg, #1e1e2a 0%, var(--color-taskbar-bg) 100%);
+  border-top-color: #3a3a5a;
+}
+.theme-dark .folder-view-details th { background: #2a2a3a; border-color: #3a3a5a; color: #c0c8e0; }
+.theme-dark .folder-view-details td { border-color: #2a2a3a; color: #b0b8d0; }
+.theme-dark .folder-view-details tr:hover td { background: #252535; }
+.theme-dark .recent-gadget { background: rgba(20,20,32,0.88); border-color: rgba(80,100,180,0.4); }
+.theme-dark .gadget-title  { color: #7090d0; border-color: #2a3a5a; }
+.theme-dark .gadget-item   { color: #a0b0c8; border-color: #1e2a3a; }
+.theme-dark a { color: #7ab0ff; }
+
+/* ── Silver theme ── */
+.theme-silver {
+  --color-titlebar-top:    #888888;
+  --color-titlebar-bot:    #5a5a5a;
+  --color-titlebar-text:   #ffffff;
+  --color-taskbar-bg:      #707070;
+  --color-meadow-btn:      #4a4a4a;
+  --color-window-body:     #f0f0f0;
+  --color-window-border:   #888888;
+  --color-window-inset:    #ffffff;
+  --color-desktop-text:    #1a1a1a;
+  --color-menu-bg:         #f4f4f4;
+  --color-menu-hover:      #808080;
+  --color-menu-hover-text: #ffffff;
+  --color-input-bg:        #ffffff;
+  --color-input-border:    #a0a0a0;
+  --color-scrollbar-thumb: #a0a0a0;
+  --radius-window: 4px 4px 0 0;
+}
+.theme-silver .desktop {
+  background:
+    radial-gradient(ellipse 80px 30px at 15% 18%, rgba(255,255,255,0.9) 0%, transparent 70%),
+    radial-gradient(ellipse 100px 35px at 55% 12%, rgba(255,255,255,0.85) 0%, transparent 70%),
+    radial-gradient(ellipse 110% 60% at 30% 120%, #d0d8c0 0%, transparent 55%),
+    radial-gradient(ellipse 110% 60% at 75% 115%, #d8e0c8 0%, transparent 50%),
+    linear-gradient(180deg, #b0c8e0 0%, #d8e8f4 60%, #f0f4f8 100%);
+}
+.theme-silver .win-titlebar {
+  background: linear-gradient(180deg, #aaaaaa 0%, #666666 100%);
+}
+.theme-silver .taskbar {
+  background: linear-gradient(180deg, #888888 0%, var(--color-taskbar-bg) 100%);
+  border-top-color: #4a4a4a;
+}
+.theme-silver .meadow-btn {
+  background: linear-gradient(180deg, #888888 0%, #4a4a4a 100%);
+  border-color: #2a2a2a;
+}
+.theme-silver .taskbar-app-btn {
+  background: linear-gradient(180deg, #9a9a9a 0%, #6a6a6a 100%);
+  border-color: #4a4a4a;
+}
+.theme-silver .taskbar-app-btn.active {
+  background: linear-gradient(180deg, #5a5a5a 0%, #848484 100%);
+}
+.theme-silver .recent-gadget { background: rgba(240,240,240,0.9); border-color: rgba(160,160,160,0.6); }
