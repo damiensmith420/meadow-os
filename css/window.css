@@ -151,10 +151,8 @@
 /* Window body/content */
 .win-body {
   flex: 1;
-  overflow: hidden;        /* let children control their own scroll */
+  overflow: auto;
   background: var(--color-window-body);
-  display: flex;
-  flex-direction: column;
 }
 
 /* Resize handle */
@@ -177,9 +175,9 @@
 .folder-view {
   padding: 8px;
   background: #fff;
-  flex: 1;           /* fill remaining space in the flex column */
-  overflow: auto;    /* THIS element scrolls, not win-body */
-  min-height: 0;     /* required for flex children to shrink and scroll */
+  flex: 1;       /* fills the flex column built by buildFolderChrome */
+  overflow: auto;
+  min-height: 0; /* required so flex child can shrink and scroll */
 }
 .folder-view-icons {
   display: flex;

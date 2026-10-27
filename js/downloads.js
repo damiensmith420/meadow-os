@@ -40,9 +40,11 @@ export function openDownloads(repos, releasesData) {
 
 function buildFolderChrome(winEl, repos, releasesData) {
   const body = winEl.querySelector('.win-body');
+  // win-body becomes the inner flex column: toolbar → addressbar → content
   body.style.display = 'flex';
   body.style.flexDirection = 'column';
   body.style.padding = '0';
+  body.style.overflow = 'hidden'; // content area handles its own scroll
 
   // Toolbar
   const toolbar = document.createElement('div');
@@ -63,19 +65,20 @@ function buildFolderChrome(winEl, repos, releasesData) {
     <input id="addr-${WIN_ID}" type="text" readonly value="Downloads" aria-label="Current path" />`;
   body.appendChild(addrBar);
 
-  // Folder content area
+  // Folder content area — this is the only scrolling element
   const content = document.createElement('div');
   content.className = 'folder-view';
   content.dataset.viewMode = 'icons';
   body.appendChild(content);
 
-  // Status bar
+  // Status bar — appended to the OS window (winEl) directly, OUTSIDE win-body,
+  // so it is always pinned to the bottom of the window regardless of scroll.
   const status = document.createElement('div');
   status.className = 'win-statusbar';
   status.innerHTML = `<span class="status-count"></span>
     <span class="win-statusbar-sep"></span>
     <span class="status-info"></span>`;
-  body.appendChild(status);
+  winEl.appendChild(status);  // ← sibling of win-body, not child
 
   // Toolbar button wiring
   toolbar.addEventListener('click', (e) => {
