@@ -4,7 +4,7 @@
  * Orchestrates: boot → data load → desktop init → app dispatch
  */
 
-import { runBoot, isFirstVisit, markVisited } from './boot.js';
+import { showLogin, runIntro, isFirstVisit, markVisited } from './boot.js';
 import { loadTheme } from './theme.js';
 import { taskbar } from './taskbar.js';
 import { initDesktop } from './desktop.js';
@@ -36,15 +36,10 @@ async function main() {
     return;
   }
 
-  // Show boot screen on first visit, otherwise skip
-  const firstVisit = isFirstVisit();
-  if (firstVisit) {
-    markVisited();
-    runBoot(startDesktop);
-  } else {
-    document.getElementById('boot-screen')?.classList.add('hidden');
-    startDesktop();
-  }
+  // Always show login → cinematic intro → desktop
+  document.getElementById('boot-screen')?.classList.add('hidden');
+  await showLogin();
+  runIntro(startDesktop);
 }
 
 async function startDesktop() {
