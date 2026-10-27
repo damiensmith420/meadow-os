@@ -111,7 +111,8 @@ export function render(container, queryString, navigate) {
   const viewCart   = params.get('cart') === '1';
 
   container.innerHTML = '';
-  container.style.cssText = 'background:#fff;height:100%;overflow-y:auto;font-family:"Trebuchet MS",Tahoma,sans-serif;color:#1a1a1a;';
+  // Don't overwrite position/inset set by .browser-viewport > * — use an inner scroll wrapper
+  container.style.cssText = 'position:absolute;inset:0;overflow-y:auto;background:#fff;font-family:"Trebuchet MS",Tahoma,sans-serif;color:#1a1a1a;';
 
   if (viewCart) {
     renderCart(container, navigate);

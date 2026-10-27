@@ -45,7 +45,7 @@ const POSTS = [
 // ── Render ────────────────────────────────────────────────────────────────────
 export function render(container, queryString, navigate) {
   container.innerHTML = '';
-  container.style.cssText = 'background:#15202b;height:100%;overflow-y:auto;font-family:"Trebuchet MS",Tahoma,sans-serif;color:#fff;';
+  container.style.cssText = 'position:absolute;inset:0;overflow-y:auto;background:#15202b;font-family:"Trebuchet MS",Tahoma,sans-serif;color:#fff;';
 
   const layout = document.createElement('div');
   layout.style.cssText = 'display:flex;max-width:1000px;margin:0 auto;min-height:100%;';
