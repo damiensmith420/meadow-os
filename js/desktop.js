@@ -8,10 +8,8 @@ const DESKTOP_APPS = [
   { id: 'downloads', label: 'Downloads',  icon: 'downloads' },
   { id: 'about',     label: 'About Me',   icon: 'about'     },
   { id: 'terminal',  label: 'Terminal',   icon: 'terminal'  },
-  { id: 'recycle',   label: 'Recycle Bin',icon: 'recycle'   },
-  { id: 'game',      label: 'Snake',      icon: 'game'      },
-  { id: 'breakout',  label: 'Breakout',   icon: 'breakout'  },
-  { id: 'frogger',   label: 'Frogger',    icon: 'frogger'   },
+  { id: 'recycle',      label: 'Recycle Bin',   icon: 'recycle'        },
+  { id: 'classic-games',label: 'Classic Games', icon: 'classic-games'  },
   { id: 'display',   label: 'Display',    icon: 'display'   },
 ];
 

@@ -60,10 +60,8 @@ function buildMenu() {
   const apps = [
     { id: 'downloads', label: 'Downloads',     sub: 'My GitHub releases',  icon: 'downloads' },
     { id: 'terminal',  label: 'Terminal',       sub: 'Command prompt',      icon: 'terminal'  },
-    { id: 'about',     label: 'About Me',       sub: 'Read about.md',       icon: 'about'     },
-    { id: 'game',      label: 'Snake',          sub: 'Built-in game',       icon: 'game'      },
-    { id: 'breakout',  label: 'Breakout',        sub: 'Brick breaker game',  icon: 'breakout'  },
-    { id: 'frogger',   label: 'Frogger',         sub: 'Cross the road!',     icon: 'frogger'   },
+    { id: 'about',          label: 'About Me',      sub: 'Read about.md',       icon: 'about'          },
+    { id: 'classic-games',  label: 'Classic Games', sub: 'Snake, Breakout & more', icon: 'classic-games' },
     { id: 'recycle',   label: 'Recycle Bin',    sub: '',                    icon: 'recycle'   },
     { id: 'display',   label: 'Display Props',  sub: 'Change theme',        icon: 'display'   },
   ];

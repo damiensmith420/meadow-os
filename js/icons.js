@@ -77,6 +77,17 @@ const ICONS = {
     <circle cx="22.5" cy="4.5" r="0.7" fill="#204020"/>
   </svg>`,
 
+  'classic-games': `<svg viewBox="0 0 40 40" aria-hidden="true">
+    <rect x="2" y="11" width="36" height="24" rx="3" fill="#f0c040" stroke="#c89a20" stroke-width="1.5"/>
+    <path d="M2 14 Q10 11 18 11 L22 8 Q26 6 30 8 L38 11 Q38 14 38 14Z" fill="#f8d860"/>
+    <rect x="7" y="17" width="6" height="2" fill="#7a5a10"/>
+    <rect x="9" y="15" width="2" height="6" fill="#7a5a10"/>
+    <circle cx="28" cy="17" r="2" fill="#e04040"/>
+    <circle cx="32" cy="21" r="2" fill="#40a840"/>
+    <circle cx="24" cy="21" r="2" fill="#4060e0"/>
+    <circle cx="28" cy="25" r="2" fill="#e0c040"/>
+  </svg>`,
+
   display: `<svg viewBox="0 0 40 40" aria-hidden="true">
     <rect x="4" y="4" width="32" height="24" rx="3" fill="#3a3a5a" stroke="#1a1a3a" stroke-width="1.5"/>
     <rect x="7" y="7" width="26" height="18" rx="1" fill="#88ccf8"/>

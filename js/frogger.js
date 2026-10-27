@@ -1,5 +1,5 @@
 /**
- * frogger.js — Built-in Frogger game
+ * frogger.js — Built-in Frog Crossing game
  * Hop across traffic lanes then log/lily-pad lanes to reach the home bays.
  * Random lane speeds/gaps per level, lives system, score.
  */
@@ -47,7 +47,7 @@ export function openFrogger() {
   const scoreBar = document.createElement('div');
   scoreBar.style.cssText = 'color:#80ff80;font-family:monospace;font-size:13px;width:100%;display:flex;justify-content:space-between;';
   scoreBar.innerHTML = `
-    <span>🐸 Frogger</span>
+    <span>🐸 Frog Crossing</span>
     <span id="fg-score">Score: 0</span>
     <span id="fg-lives">🐸🐸🐸</span>
     <span id="fg-level">Level 1</span>
@@ -59,7 +59,7 @@ export function openFrogger() {
   canvas.height = H;
   canvas.style.cssText = `border:2px solid #1a4a1a;display:block;`;
   canvas.setAttribute('tabindex', '0');
-  canvas.setAttribute('aria-label', 'Frogger game. Arrow keys to hop.');
+  canvas.setAttribute('aria-label', 'Frog Crossing game. Arrow keys to hop.');
   wrapper.appendChild(canvas);
 
   const hint = document.createElement('div');
@@ -69,7 +69,7 @@ export function openFrogger() {
 
   createWindow({
     id: 'game-frogger',
-    title: 'Frogger',
+    title: 'Frog Crossing',
     icon: 'frogger',
     width: W + 40,
     height: H + 115,
@@ -437,7 +437,7 @@ function startFrogger(canvas, scoreBar) {
         ctx.fillStyle = '#80ff80';
         ctx.font = 'bold 22px monospace';
         ctx.textAlign = 'center';
-        ctx.fillText('FROGGER', W / 2, H / 2 - 14);
+        ctx.fillText('FROG CROSSING', W / 2, H / 2 - 14);
         ctx.fillStyle = '#406040';
         ctx.font = '12px monospace';
         ctx.fillText('Arrow keys to hop', W / 2, H / 2 + 10);

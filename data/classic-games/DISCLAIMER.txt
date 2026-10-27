@@ -1,0 +1,71 @@
+================================================================================
+  CLASSIC GAMES — DISCLAIMER & INTELLECTUAL PROPERTY NOTICE
+  Meadow OS  |  https://github.com/damiensmith420
+================================================================================
+
+The three games included in this "Classic Games" folder — Snake, Breakout, and
+Frog Crossing — are original, independently written software implementations
+created for the Meadow OS project. They are inspired by classic arcade game
+concepts and mechanics but are not copies, ports, or derivatives of any
+proprietary software or source code.
+
+────────────────────────────────────────────────────────────────────────────────
+NO INFRINGEMENT INTENDED
+────────────────────────────────────────────────────────────────────────────────
+
+It is not the intention of this project to infringe upon, violate, or challenge
+the intellectual property rights, trademarks, trade dress, patents, or copyrights
+of any individual, company, or organisation. All rights to the original works,
+names, concepts, and any related materials belong solely to their respective
+owners, as credited below.
+
+If you are a rights holder and believe that anything within this project
+infringes upon your intellectual property, please raise an issue on the GitHub
+repository or contact the author directly. Any concern will be addressed
+promptly and in good faith.
+
+────────────────────────────────────────────────────────────────────────────────
+CREDITS & ORIGINAL RIGHTS HOLDERS
+────────────────────────────────────────────────────────────────────────────────
+
+SNAKE
+  The "Snake" concept and name are associated with a genre of games dating back
+  to the 1976 arcade game "Blockade" by Gremlin Industries. The most widely
+  recognised modern version was popularised by Nokia on its mobile handsets.
+  "Nokia" is a registered trademark of Nokia Corporation.
+  All rights to the Nokia Snake game belong to Nokia Corporation.
+  This implementation is an independent recreation of the general Snake mechanic
+  and is not affiliated with or endorsed by Nokia Corporation.
+
+BREAKOUT
+  "Breakout" is a registered trademark of Atari, Inc. (now Atari SA).
+  The original Breakout arcade game was designed by Nolan Bushnell and Steve
+  Bristow, and engineered by Steve Wozniak, and was released by Atari in 1976.
+  All rights to the original Breakout game, name, and trade dress belong to
+  Atari SA and/or their respective rights holders.
+  This implementation is an independent recreation of the general brick-breaker
+  mechanic and is not affiliated with or endorsed by Atari SA.
+
+FROG CROSSING
+  This game is inspired by the classic arcade game "Frogger", originally
+  developed and published by Konami in 1981. "Frogger" is a registered trademark
+  of Konami Holdings Corporation.
+  All rights to the Frogger game, name, characters, and trade dress belong to
+  Konami Holdings Corporation and/or their respective rights holders.
+  This implementation has been renamed "Frog Crossing" and is an independent
+  recreation of the general lane-crossing mechanic. It is not affiliated with,
+  endorsed by, or in any way connected to Konami Holdings Corporation.
+
+────────────────────────────────────────────────────────────────────────────────
+GENERAL NOTICE
+────────────────────────────────────────────────────────────────────────────────
+
+All trademarks, service marks, trade names, game titles, logos, and brand names
+referenced herein are the property of their respective owners. Their mention in
+this document is solely for the purposes of attribution and transparency, and
+does not imply any affiliation, sponsorship, or endorsement by those owners.
+
+This project is a personal, non-commercial portfolio piece. No revenue is
+generated from the Classic Games collection.
+
+================================================================================

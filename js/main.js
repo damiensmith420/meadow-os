@@ -136,6 +136,11 @@ async function openApp(id) {
       openRecycleBin();
       break;
     }
+    case 'classic-games': {
+      const { openClassicGames } = await import('./classic-games-folder.js');
+      openClassicGames(openApp);
+      break;
+    }
     case 'game': {
       const { openGame } = await import('./game.js');
       openGame();
