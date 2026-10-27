@@ -1,6 +1,6 @@
 # About Me
 
-Hi! I'm **damiensmith420**, a developer who loves building useful tools and sharing them openly.
+Hi! I'm **Damien Smith**, a developer who loves building useful tools and sharing them openly.
 
 ## Projects
 
