@@ -47,8 +47,9 @@ async function startDesktop() {
   document.getElementById('desktop')?.classList.remove('hidden');
   document.getElementById('taskbar')?.classList.remove('hidden');
 
-  // Start clock
+  // Start clock + tray
   taskbar.startClock();
+  taskbar.initWifi();
 
   // Load data
   await loadData();

@@ -61,6 +61,108 @@ function updateTitle(id, title) {
   if (btn) btn.querySelector('span').textContent = title;
 }
 
+/** Init the wifi tray icon and popup */
+function initWifi() {
+  const btn = document.getElementById('tray-wifi');
+  if (!btn) return;
+
+  // Build popup element once
+  const popup = document.createElement('div');
+  popup.id = 'wifi-popup';
+  popup.className = 'wifi-popup hidden';
+  popup.innerHTML = `
+    <div class="wifi-popup-header">
+      <svg width="14" height="14" viewBox="0 0 16 16" style="flex-shrink:0;">
+        <path d="M8 12.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" fill="#e8eeff"/>
+        <path d="M4.5 9.5a5 5 0 0 1 7 0" fill="none" stroke="#e8eeff" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M2 7a8 8 0 0 1 12 0" fill="none" stroke="#e8eeff" stroke-width="1.4" stroke-linecap="round"/>
+        <path d="M0 4.5a11 11 0 0 1 16 0" fill="none" stroke="#e8eeff" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+      <span>Wireless Network Connection</span>
+    </div>
+    <div class="wifi-network connected">
+      <div class="wifi-network-icon">
+        <svg width="20" height="20" viewBox="0 0 16 16">
+          <path d="M8 12.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" fill="#1a6ecf"/>
+          <path d="M4.5 9.5a5 5 0 0 1 7 0" fill="none" stroke="#1a6ecf" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M2 7a8 8 0 0 1 12 0" fill="none" stroke="#1a6ecf" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M0 4.5a11 11 0 0 1 16 0" fill="none" stroke="#1a6ecf" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="wifi-network-info">
+        <div class="wifi-network-name">McDonald's WiFi</div>
+        <div class="wifi-network-status">Connected</div>
+      </div>
+      <div class="wifi-signal">
+        <div class="wifi-bar" style="height:4px;"></div>
+        <div class="wifi-bar" style="height:7px;"></div>
+        <div class="wifi-bar" style="height:10px;"></div>
+        <div class="wifi-bar active" style="height:13px;"></div>
+      </div>
+    </div>
+    <div class="wifi-other-label">Other available networks</div>
+    <div class="wifi-network other">
+      <div class="wifi-network-icon muted">
+        <svg width="16" height="16" viewBox="0 0 16 16">
+          <path d="M8 12.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" fill="#888"/>
+          <path d="M4.5 9.5a5 5 0 0 1 7 0" fill="none" stroke="#888" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M2 7a8 8 0 0 1 12 0" fill="none" stroke="#ccc" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+          <path d="M0 4.5a11 11 0 0 1 16 0" fill="none" stroke="#ccc" stroke-width="1.4" stroke-linecap="round" opacity="0.15"/>
+        </svg>
+      </div>
+      <div class="wifi-network-info">
+        <div class="wifi-network-name">NETGEAR_5G_EXT</div>
+        <div class="wifi-network-status">Security: WPA2</div>
+      </div>
+    </div>
+    <div class="wifi-network other">
+      <div class="wifi-network-icon muted">
+        <svg width="16" height="16" viewBox="0 0 16 16">
+          <path d="M8 12.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" fill="#888"/>
+          <path d="M4.5 9.5a5 5 0 0 1 7 0" fill="none" stroke="#888" stroke-width="1.4" stroke-linecap="round"/>
+          <path d="M2 7a8 8 0 0 1 12 0" fill="none" stroke="#ccc" stroke-width="1.4" stroke-linecap="round" opacity="0.3"/>
+          <path d="M0 4.5a11 11 0 0 1 16 0" fill="none" stroke="#ccc" stroke-width="1.4" stroke-linecap="round" opacity="0.15"/>
+        </svg>
+      </div>
+      <div class="wifi-network-info">
+        <div class="wifi-network-name">xfinitywifi</div>
+        <div class="wifi-network-status">Open network</div>
+      </div>
+    </div>
+    <div class="wifi-network other">
+      <div class="wifi-network-icon muted">
+        <svg width="16" height="16" viewBox="0 0 16 16">
+          <path d="M8 12.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z" fill="#888"/>
+          <path d="M4.5 9.5a5 5 0 0 1 7 0" fill="none" stroke="#888" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="wifi-network-info">
+        <div class="wifi-network-name">Pretty Fly for a WiFi</div>
+        <div class="wifi-network-status">Security: WPA2</div>
+      </div>
+    </div>
+    <div class="wifi-popup-footer">
+      <button class="wifi-footer-btn" onclick="this.textContent='Disconnecting...';setTimeout(()=>this.textContent='Connect',1200)">Disconnect</button>
+      <button class="wifi-footer-btn">Network Settings</button>
+    </div>`;
+  document.body.appendChild(popup);
+
+  // Toggle on click
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const hidden = popup.classList.toggle('hidden');
+    btn.classList.toggle('active', !hidden);
+  });
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (!popup.contains(e.target) && e.target !== btn) {
+      popup.classList.add('hidden');
+      btn.classList.remove('active');
+    }
+  });
+}
+
 /** Start the live clock ticker */
 function startClock() {
   const el = clockEl();
@@ -80,4 +182,4 @@ function escHtml(s) {
   return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
 
-export const taskbar = { addWindow, removeWindow, setActive, updateTitle, startClock };
+export const taskbar = { addWindow, removeWindow, setActive, updateTitle, startClock, initWifi };
