@@ -58,12 +58,13 @@ function buildMenu() {
   if (!menu) return;
 
   const apps = [
-    { id: 'downloads', label: 'Downloads',     sub: 'My GitHub releases',  icon: 'downloads' },
-    { id: 'terminal',  label: 'Terminal',       sub: 'Command prompt',      icon: 'terminal'  },
-    { id: 'about',          label: 'About Me',      sub: 'Read about.md',       icon: 'about'          },
-    { id: 'classic-games',  label: 'Classic Games', sub: 'Snake, Breakout & more', icon: 'classic-games' },
-    { id: 'recycle',   label: 'Recycle Bin',    sub: '',                    icon: 'recycle'   },
-    { id: 'display',   label: 'Display Props',  sub: 'Change theme',        icon: 'display'   },
+    { id: 'downloads',    label: 'Downloads',      sub: 'My GitHub releases',      icon: 'downloads'    },
+    { id: 'terminal',     label: 'Terminal',        sub: 'Command prompt',          icon: 'terminal'     },
+    { id: 'about',        label: 'About Me',        sub: 'Read about.md',           icon: 'about'        },
+    { id: 'classic-games',label: 'Classic Games',   sub: 'Snake, Breakout & more',  icon: 'classic-games'},
+    { id: 'browser',      label: 'MeadowExplorer',  sub: 'Browse the .mow web',     icon: 'browser'      },
+    { id: 'recycle',      label: 'Recycle Bin',     sub: '',                         icon: 'recycle'      },
+    { id: 'display',      label: 'Display Props',   sub: 'Change theme',             icon: 'display'      },
   ];
 
   menu.innerHTML = `

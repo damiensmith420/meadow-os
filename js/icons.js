@@ -88,6 +88,18 @@ const ICONS = {
     <circle cx="28" cy="25" r="2" fill="#e0c040"/>
   </svg>`,
 
+  browser: `<svg viewBox="0 0 40 40" aria-hidden="true">
+    <rect x="2" y="6" width="36" height="28" rx="4" fill="#1a6ecf" stroke="#0e4fa8" stroke-width="1.5"/>
+    <rect x="2" y="6" width="36" height="10" rx="4" fill="#2a80e0"/>
+    <rect x="2" y="12" width="36" height="4" fill="#2a80e0"/>
+    <rect x="6" y="8" width="20" height="4" rx="2" fill="#fff" opacity="0.9"/>
+    <circle cx="30" cy="10" r="3" fill="#40d040"/>
+    <circle cx="36" cy="10" r="2" fill="none" stroke="#fff" stroke-width="1.2"/>
+    <rect x="5" y="19" width="30" height="2" rx="1" fill="#c0d8f8" opacity="0.6"/>
+    <rect x="5" y="23" width="22" height="2" rx="1" fill="#c0d8f8" opacity="0.4"/>
+    <rect x="5" y="27" width="26" height="2" rx="1" fill="#c0d8f8" opacity="0.4"/>
+  </svg>`,
+
   display: `<svg viewBox="0 0 40 40" aria-hidden="true">
     <rect x="4" y="4" width="32" height="24" rx="3" fill="#3a3a5a" stroke="#1a1a3a" stroke-width="1.5"/>
     <rect x="7" y="7" width="26" height="18" rx="1" fill="#88ccf8"/>

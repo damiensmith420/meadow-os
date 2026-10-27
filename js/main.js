@@ -141,6 +141,11 @@ async function openApp(id) {
       openClassicGames(openApp);
       break;
     }
+    case 'browser': {
+      const { openBrowser } = await import('./browser.js');
+      openBrowser();
+      break;
+    }
     case 'game': {
       const { openGame } = await import('./game.js');
       openGame();

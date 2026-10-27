@@ -5,12 +5,13 @@
 import { getIcon } from './icons.js';
 
 const DESKTOP_APPS = [
-  { id: 'downloads', label: 'Downloads',  icon: 'downloads' },
-  { id: 'about',     label: 'About Me',   icon: 'about'     },
-  { id: 'terminal',  label: 'Terminal',   icon: 'terminal'  },
-  { id: 'recycle',      label: 'Recycle Bin',   icon: 'recycle'        },
-  { id: 'classic-games',label: 'Classic Games', icon: 'classic-games'  },
-  { id: 'display',   label: 'Display',    icon: 'display'   },
+  { id: 'downloads',     label: 'Downloads',     icon: 'downloads'     },
+  { id: 'about',         label: 'About Me',       icon: 'about'         },
+  { id: 'terminal',      label: 'Terminal',       icon: 'terminal'      },
+  { id: 'recycle',       label: 'Recycle Bin',    icon: 'recycle'       },
+  { id: 'classic-games', label: 'Classic Games',  icon: 'classic-games' },
+  { id: 'browser',       label: 'MeadowExplorer', icon: 'browser'       },
+  { id: 'display',       label: 'Display',        icon: 'display'       },
 ];
 
 /**
