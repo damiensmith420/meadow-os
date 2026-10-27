@@ -297,9 +297,13 @@
   font-size: 12px;
   line-height: 1.6;
   padding: 8px;
-  flex: 1;           /* fills win-body flex column */
+  /* Fill the entire win-body so no beige shows through */
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
   overflow-y: auto;
-  min-height: 0;
+  display: flex;
+  flex-direction: column;
 }
 .terminal-line { white-space: pre-wrap; word-break: break-word; }
 .terminal-line.error { color: #ff6060; }

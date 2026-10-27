@@ -33,6 +33,11 @@ export function openTerminal() {
     content: body,
   });
 
+  // Override win-body background to black so no beige shows through
+  // behind or around the terminal content
+  const winBody = el.querySelector('.win-body');
+  if (winBody) winBody.style.background = '#0a0a14';
+
   // Print banner
   const out = el.querySelector('.terminal-body');
   printLines(out, [
