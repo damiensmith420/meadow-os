@@ -2,7 +2,7 @@
 
 A personal downloads hub for my projects, built to look and feel like a classic early-2000s desktop operating system — running entirely in your browser, hosted for free on GitHub Pages.
 
-Browse and download my releases through a retro desktop UI complete with draggable windows, a taskbar, a built-in terminal, Snake, and more.
+Browse and download my releases through a retro desktop UI complete with draggable windows, a taskbar, a built-in terminal, a Classic Games folder, and more.
 
 ---
 
@@ -93,3 +93,27 @@ python -m http.server 8000
 ## License
 
 MIT — fork it, reskin it, make it your own.
+
+---
+
+## Classic Games — Intellectual Property Notice
+
+The **Classic Games** folder contains three browser games: **Snake**, **Breakout**, and **Frog Crossing**. All three are fully original, independently written implementations. The following points apply to each:
+
+- **No proprietary source code was copied, ported, or adapted.** Every line was written from scratch in vanilla JavaScript.
+- **No proprietary artwork, sprites, sounds, or trade dress was reproduced.** All visuals are drawn programmatically using the HTML5 Canvas API with no external assets.
+- **Game mechanics are not protected by copyright.** The general concepts of a snake eating food and growing, a ball bouncing off bricks to destroy them, and a character hopping across lanes of traffic are well-established, unpatentable game mechanics that exist across countless independent implementations. Copyright law does not protect ideas, concepts, or game rules — only specific creative expression such as code and artwork.
+- **The name "Frogger" is a registered trademark of Konami Holdings Corporation.** This project deliberately does not use that name. The equivalent game in this project is titled **Frog Crossing** to avoid any trademark association.
+- **This project is non-commercial.** No revenue is generated, no ads are shown, and no fees are charged. It is a personal portfolio site hosted for free on GitHub Pages.
+
+### Original rights holders and credits
+
+| Game in this project | Inspired by | Original rights holder |
+|---|---|---|
+| Snake | Snake (Nokia, ~1998) | Nokia Corporation |
+| Breakout | Breakout (Atari, 1976) | Atari SA |
+| Frog Crossing | Frogger (Konami, 1981) | Konami Holdings Corporation |
+
+All trademarks, trade names, and intellectual property referenced above belong solely to their respective owners. Their mention here is for attribution purposes only and does not imply any affiliation, endorsement, or sponsorship.
+
+A more detailed disclaimer is included inside the app at `data/classic-games/DISCLAIMER.txt`.
