@@ -381,8 +381,14 @@ function renderVersionLevel(content, status, mode, repo, release, winEl, repos, 
   }
 
   renderItems(content, mode, items);
-  const totalDL = assets.reduce((s, a) => s + (a.download_count || 0), 0);
-  setStatus(status, assets.length, `${assets.length} file(s) · ${totalDL} total downloads`);
+  // Count only real downloadable files (not shortcuts/notes) for the status bar
+  const fileItems = items.filter(i => i.type === 'file');
+  const totalDL   = assets.reduce((s, a) => s + (a.download_count || 0), 0);
+  setStatus(
+    status,
+    items.length,
+    `${fileItems.length} file(s) · ${totalDL.toLocaleString()} total downloads`
+  );
 }
 
 // ── Item rendering ────────────────────────────────────────────────────────────

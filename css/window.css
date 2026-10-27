@@ -151,8 +151,10 @@
 /* Window body/content */
 .win-body {
   flex: 1;
-  overflow: auto;
+  overflow: hidden;        /* let children control their own scroll */
   background: var(--color-window-body);
+  display: flex;
+  flex-direction: column;
 }
 
 /* Resize handle */
@@ -175,7 +177,9 @@
 .folder-view {
   padding: 8px;
   background: #fff;
-  height: 100%;
+  flex: 1;           /* fill remaining space in the flex column */
+  overflow: auto;    /* THIS element scrolls, not win-body */
+  min-height: 0;     /* required for flex children to shrink and scroll */
 }
 .folder-view-icons {
   display: flex;
@@ -270,8 +274,9 @@
   font-size: 12px;
   line-height: 1.5;
   color: #1a1a1a;
-  height: 100%;
+  flex: 1;           /* fills win-body flex column */
   overflow: auto;
+  min-height: 0;
   white-space: pre-wrap;
   word-break: break-word;
 }
@@ -294,8 +299,9 @@
   font-size: 12px;
   line-height: 1.6;
   padding: 8px;
-  height: 100%;
+  flex: 1;           /* fills win-body flex column */
   overflow-y: auto;
+  min-height: 0;
 }
 .terminal-line { white-space: pre-wrap; word-break: break-word; }
 .terminal-line.error { color: #ff6060; }
