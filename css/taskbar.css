@@ -99,3 +99,123 @@
 .tray-clock:hover { background: rgba(255,255,255,0.1); }
 .tray-clock .clock-time { font-weight: bold; display: block; }
 .tray-clock .clock-date { display: block; font-size: 10px; opacity: 0.8; }
+
+/* ── WiFi tray icon ──────────────────────────────────────────────────────── */
+.tray-wifi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 3px;
+  border: none;
+  background: none;
+  color: #e8eeff;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  margin-right: 2px;
+  opacity: 0.85;
+  transition: background 0.1s, opacity 0.1s;
+}
+.tray-wifi:hover { background: rgba(255,255,255,0.12); opacity: 1; }
+.tray-wifi.active { background: rgba(255,255,255,0.18); opacity: 1; }
+
+/* ── WiFi popup panel ────────────────────────────────────────────────────── */
+.wifi-popup {
+  position: fixed;
+  bottom: 42px;
+  right: 6px;
+  width: 260px;
+  background: linear-gradient(180deg, #1a3a6a 0%, #0e2a52 100%);
+  border: 1px solid #2a5aaa;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+  z-index: 6000;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: #e8eeff;
+  overflow: hidden;
+}
+.wifi-popup.hidden { display: none; }
+
+.wifi-popup-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 12px;
+  background: rgba(0,0,0,0.25);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  font-weight: bold;
+  font-size: 11px;
+  letter-spacing: 0.3px;
+}
+
+.wifi-network {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  cursor: default;
+  transition: background 0.1s;
+}
+.wifi-network:hover { background: rgba(255,255,255,0.06); }
+.wifi-network.connected { background: rgba(30,100,200,0.25); }
+.wifi-network.connected:hover { background: rgba(30,100,200,0.35); }
+
+.wifi-network-icon { flex-shrink: 0; display:flex; align-items:center; }
+.wifi-network-icon.muted { opacity: 0.5; }
+
+.wifi-network-info { flex: 1; min-width: 0; }
+.wifi-network-name {
+  font-weight: bold;
+  font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wifi-network-status { font-size: 10px; color: #a0b8e0; margin-top: 1px; }
+.wifi-network.connected .wifi-network-status { color: #60d060; }
+
+.wifi-signal {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  flex-shrink: 0;
+}
+.wifi-bar {
+  width: 4px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 1px;
+}
+.wifi-bar.active { background: #60d060; }
+
+.wifi-other-label {
+  padding: 6px 12px 4px;
+  font-size: 10px;
+  color: #7090b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.wifi-popup-footer {
+  display: flex;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(0,0,0,0.2);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.wifi-footer-btn {
+  flex: 1;
+  padding: 5px 8px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 3px;
+  color: #e8eeff;
+  font-size: 11px;
+  cursor: pointer;
+  font-family: var(--font-ui);
+  transition: background 0.1s;
+}
+.wifi-footer-btn:hover { background: rgba(255,255,255,0.2); }
