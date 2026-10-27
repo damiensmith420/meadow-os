@@ -58,6 +58,14 @@ const ICONS = {
     <circle cx="28" cy="26" r="2" fill="#f8d040"/>
   </svg>`,
 
+  breakout: `<svg viewBox="0 0 40 40" aria-hidden="true">
+    <rect x="4" y="5" width="32" height="5" rx="1" fill="#f84040"/>
+    <rect x="4" y="12" width="32" height="5" rx="1" fill="#f87030"/>
+    <rect x="4" y="19" width="32" height="5" rx="1" fill="#f8d040"/>
+    <rect x="11" y="33" width="18" height="4" rx="2" fill="#6060d0"/>
+    <circle cx="20" cy="28" r="3" fill="#ffffff"/>
+  </svg>`,
+
   display: `<svg viewBox="0 0 40 40" aria-hidden="true">
     <rect x="4" y="4" width="32" height="24" rx="3" fill="#3a3a5a" stroke="#1a1a3a" stroke-width="1.5"/>
     <rect x="7" y="7" width="26" height="18" rx="1" fill="#88ccf8"/>

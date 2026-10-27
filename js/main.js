@@ -141,6 +141,11 @@ async function openApp(id) {
       openGame();
       break;
     }
+    case 'breakout': {
+      const { openBreakout } = await import('./breakout.js');
+      openBreakout();
+      break;
+    }
     case 'display': {
       const { showDisplayProperties } = await import('./dialog.js');
       showDisplayProperties();
