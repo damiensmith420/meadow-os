@@ -63,6 +63,7 @@ function buildMenu() {
     { id: 'about',     label: 'About Me',       sub: 'Read about.md',       icon: 'about'     },
     { id: 'game',      label: 'Snake',          sub: 'Built-in game',       icon: 'game'      },
     { id: 'breakout',  label: 'Breakout',        sub: 'Brick breaker game',  icon: 'breakout'  },
+    { id: 'frogger',   label: 'Frogger',         sub: 'Cross the road!',     icon: 'frogger'   },
     { id: 'recycle',   label: 'Recycle Bin',    sub: '',                    icon: 'recycle'   },
     { id: 'display',   label: 'Display Props',  sub: 'Change theme',        icon: 'display'   },
   ];

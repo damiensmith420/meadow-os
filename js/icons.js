@@ -66,6 +66,17 @@ const ICONS = {
     <circle cx="20" cy="28" r="3" fill="#ffffff"/>
   </svg>`,
 
+  frogger: `<svg viewBox="0 0 40 40" aria-hidden="true">
+    <rect x="2" y="28" width="36" height="7" rx="2" fill="#303030"/>
+    <rect x="2" y="19" width="36" height="7" rx="2" fill="#1a3a6a"/>
+    <rect x="2" y="10" width="36" height="7" rx="2" fill="#2a5a2a"/>
+    <ellipse cx="20" cy="6" rx="5" ry="4" fill="#50e050"/>
+    <circle cx="17.5" cy="4.5" r="1.5" fill="#fff"/>
+    <circle cx="22.5" cy="4.5" r="1.5" fill="#fff"/>
+    <circle cx="17.5" cy="4.5" r="0.7" fill="#204020"/>
+    <circle cx="22.5" cy="4.5" r="0.7" fill="#204020"/>
+  </svg>`,
+
   display: `<svg viewBox="0 0 40 40" aria-hidden="true">
     <rect x="4" y="4" width="32" height="24" rx="3" fill="#3a3a5a" stroke="#1a1a3a" stroke-width="1.5"/>
     <rect x="7" y="7" width="26" height="18" rx="1" fill="#88ccf8"/>

@@ -146,6 +146,11 @@ async function openApp(id) {
       openBreakout();
       break;
     }
+    case 'frogger': {
+      const { openFrogger } = await import('./frogger.js');
+      openFrogger();
+      break;
+    }
     case 'display': {
       const { showDisplayProperties } = await import('./dialog.js');
       showDisplayProperties();

@@ -11,6 +11,7 @@ const DESKTOP_APPS = [
   { id: 'recycle',   label: 'Recycle Bin',icon: 'recycle'   },
   { id: 'game',      label: 'Snake',      icon: 'game'      },
   { id: 'breakout',  label: 'Breakout',   icon: 'breakout'  },
+  { id: 'frogger',   label: 'Frogger',    icon: 'frogger'   },
   { id: 'display',   label: 'Display',    icon: 'display'   },
 ];
 
