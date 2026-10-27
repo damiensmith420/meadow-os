@@ -57,7 +57,7 @@ const COMMENTS = [
 // ── Render ────────────────────────────────────────────────────────────────────
 export function render(container, queryString, navigate) {
   container.innerHTML = '';
-  container.style.cssText = 'background:#dae0e6;height:100%;overflow-y:auto;font-family:"IBM Plex Sans","Trebuchet MS",sans-serif;color:#1c1c1c;';
+  container.style.cssText = 'position:absolute;inset:0;overflow-y:auto;background:#dae0e6;font-family:"IBM Plex Sans","Trebuchet MS",sans-serif;color:#1c1c1c;';
 
   const layout = document.createElement('div');
   layout.style.cssText = 'display:flex;max-width:1100px;margin:0 auto;gap:16px;padding:16px;';
