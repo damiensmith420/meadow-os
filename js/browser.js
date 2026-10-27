@@ -77,6 +77,8 @@ export function openBrowser(startUrl) {
   // ── Page viewport ────────────────────────────────────────────────────────────
   const viewport = document.createElement('div');
   viewport.className = 'browser-viewport';
+  // Sites render as normal block content inside this scroll container
+  viewport.style.cssText = 'flex:1;overflow-y:auto;overflow-x:hidden;min-height:0;position:relative;';
   chrome.appendChild(viewport);
 
   // ── Status bar ───────────────────────────────────────────────────────────────

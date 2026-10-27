@@ -112,7 +112,7 @@ export function render(container, queryString, navigate) {
 
   container.innerHTML = '';
   // Don't overwrite position/inset set by .browser-viewport > * — use an inner scroll wrapper
-  container.style.cssText = 'position:absolute;inset:0;overflow-y:auto;background:#fff;font-family:"Trebuchet MS",Tahoma,sans-serif;color:#1a1a1a;';
+  container.style.cssText = 'background:#fff;font-family:"Trebuchet MS",Tahoma,sans-serif;color:#1a1a1a;min-height:100%;';
 
   if (viewCart) {
     renderCart(container, navigate);

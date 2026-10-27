@@ -396,7 +396,8 @@
 
 .browser-viewport {
   flex: 1;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
   position: relative;
   background: #fff;
   min-height: 0;

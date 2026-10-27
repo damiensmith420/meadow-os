@@ -111,7 +111,7 @@ export function render(container, queryString, navigate) {
   const query   = params.get('q') || '';
 
   container.innerHTML = '';
-  container.style.cssText = 'position:absolute;inset:0;overflow-y:auto;background:#fff;font-family:"Trebuchet MS",Tahoma,sans-serif;';
+  container.style.cssText = 'background:#fff;font-family:"Trebuchet MS",Tahoma,sans-serif;min-height:100%;';
 
   if (!query) {
     renderHomepage(container, navigate);

@@ -193,7 +193,7 @@ export function render(container, queryString, navigate) {
   const article = ARTICLES[articleKey] || ARTICLES['main'];
 
   container.innerHTML = '';
-  container.style.cssText = 'position:absolute;inset:0;overflow-y:auto;background:#fff;font-family:Georgia,"Times New Roman",serif;color:#202122;font-size:14px;';
+  container.style.cssText = 'background:#fff;font-family:Georgia,"Times New Roman",serif;color:#202122;font-size:14px;min-height:100%;';
 
   const page = document.createElement('div');
   page.style.cssText = 'max-width:860px;margin:0 auto;padding:16px;';

@@ -93,7 +93,7 @@ export function render(container, queryString, navigate) {
   const videoId = params.get('v');
 
   container.innerHTML = '';
-  container.style.cssText = 'position:absolute;inset:0;overflow-y:auto;background:#0f0f0f;font-family:"Roboto",Arial,sans-serif;color:#fff;';
+  container.style.cssText = 'background:#0f0f0f;font-family:"Roboto",Arial,sans-serif;color:#fff;min-height:100%;';
 
   if (videoId) {
     const video = VIDEOS.find(v => v.id === videoId) || VIDEOS[0];
